@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/global.css" class="css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/images/home-svgrepo-com.svg" alt="ícone de casa">
+            <p>Todo List</p>
+        </div>
+
+        <a href="http://127.0.0.1:5500/cadastro.html">
+            <button>
+                Criar Conta
+            </button>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <div class="width300">
+
+            <div class="title">
+                <h1>Login</h1>
+            </div>
+
+            <form action="/pagina-processa-dados-do-form" method="post">
+                <div class="input-div">
+                    <div class="img-div">
+                        <img src="./assets/images/user-identity-svgrepo-com.svg" alt="">
+                    </div>
+                    <input type="email" id="email" placeholder="Email"/>
+                </div>
+
+                <div class="input-div">
+                    <div class="img-div">
+                        <img src="./assets/images/password-lock-solid-svgrepo-com.svg" alt="">
+                    </div>
+                    <input type="password" id="password" placeholder="Password"/>
+                </div>
+
+                <div class="button-login">
+                    <button type="submit">
+                        <img src="./assets/images/login-svgrepo-com.svg" alt=""> 
+                        <p>login</p>
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Desenvolvido por Vitor Araujo</p>
+    </footer>
+    
+</body>
+</html>

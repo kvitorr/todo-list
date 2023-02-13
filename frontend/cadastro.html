@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/global.css" class="css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/images/home-svgrepo-com.svg" alt="ícone de casa">
+            <p>Todo List</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="width300">
+
+            <div class="title">
+                <h1>Cadastro</h1>
+            </div>
+
+            <form id="form">
+                <label for="name">Name</label>
+                <div class="input-div">
+                    <input type="text" id="name"/>
+                </div>
+
+                <label for="email">Email</label>
+                <div class="input-div">
+                    <input type="email" id="email"/>
+                </div>
+
+                <label for="password">Password</label>
+                <div class="input-div">
+                    <input type="password" id="password"/>
+                </div>
+
+            
+                <button  id="buttonRegister" type="submit">
+                    <img src="./assets/images/login-svgrepo-com.svg" alt=""> 
+                    <p>Cadastrar</p>
+                </button>
+            
+            </form>
+        </div>
+    </main>
+
+
+
+    <footer class="footer">
+        <p>Desenvolvido por Vitor Araujo</p>
+    </footer>
+    
+    <script src="./assets/javascript/cadastro.js"></script>        
+    
+
+</body>
+</html>

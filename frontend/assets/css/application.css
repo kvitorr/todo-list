@@ -1,0 +1,85 @@
+.button-logout {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.5rem;
+    gap: 0.2rem;
+}
+
+.header button {
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    gap: 0.2rem;
+    background-color: transparent;
+}
+
+.main-content {
+    height: 60%;
+}
+
+.main-content .application {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.main-content .application .grid-content {
+    display: grid;
+    grid-template-columns: 35px 65px 150px 50px;
+}
+
+.main-content .application .grid-content .description {
+    color: rgb(71, 126, 0);
+}
+
+.main-content .application .header-content {
+    padding: 0.5rem;
+    font-weight: 700;
+    background-color: rgba(220, 220, 220, 0.233);
+    border-block: 1px solid rgb(220, 220, 220);
+}
+
+.align-start {
+    justify-content: flex-start;
+}
+
+#todos {
+    height: 200px;
+    overflow-y: auto;
+}
+
+.action-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-content .width350 .application .action-form form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.main-content .width350 .application .action-form form input {
+    padding: 0.2rem 0.1rem;
+}
+
+.main-content .width350 .application .action-form button {
+    padding: 0.3rem 0.6rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.438);
+    border-radius: 0.2rem;
+    background-color: rgb(155, 241, 41);
+    cursor: pointer;
+}
+
+.main-content .width350 .application .action-form button:hover {
+    background-color: rgb(193, 233, 140);
+    transition: 200ms;
+}
+
+.main-content .width350 .application ul {
+    list-style-type: none;
+}
