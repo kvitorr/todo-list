@@ -1,34 +1,29 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from 'jsonwebtoken'
-import { AppDataSource } from "../database";
-import { UserRepository } from "../repository/UserRepository";
 
 type JwtPayload = {
-    id: number
+    email: string
 }
 
-const userRepository = new UserRepository(AppDataSource.manager)
+export const authMiddleware = (request: Request | any, response: Response, nextFunction: NextFunction) => {
+    const token = request.signedCookies['token'];
 
-export const authMiddleware = async (request: Request, response: Response, nextFunction: NextFunction) => {
-    const { authorization } = request.headers
+    console.log('auth token: ', token)
 
-    if(!authorization){
-        throw new Error('Não autorizado')
+    if (!token) {
+        return response.status(401).send('Token não fornecido');
     }
 
-    const token = authorization.split(" ")[1]
+    try {
+        const { email } = jwt.verify(token, 'zUVnomh1DIVN4lBd4PpStnTxngwKjsO') as JwtPayload;
+        console.log('testando')
 
-    const { id } = jwt.verify(token, "zUVnomh1DIVN4lBd4PpStnTxngwKjsO") as JwtPayload
+        request.email = email; // Adiciona as informações do usuário decodificadas ao objeto 'request'
 
-    const user = await userRepository.getUserById(id)
+        console.log('testando')
 
-    if(!user){
-        throw new Error("Não autorizado")
+        nextFunction(); // Chama a próxima função de middleware na cadeia
+    } catch (err) {
+        return response.status(401).send('Token inválido ou expirado');
     }
-
-    const { password:_, ...loggedUser } = user
-
-    request.user = user
-
-    nextFunction()
 }
