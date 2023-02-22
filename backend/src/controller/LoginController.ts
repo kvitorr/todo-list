@@ -28,20 +28,22 @@ export class LoginController {
             throw new Error('E-mail ou senha inválidos')
         }
 
-        const token = jwt.sign({id_user: user.id_user}, "zUVnomh1DIVN4lBd4PpStnTxngwKjsO", {
+        const token = jwt.sign({email: user.email}, "zUVnomh1DIVN4lBd4PpStnTxngwKjsO", {
             expiresIn: '8h'
         })
 
-        const { password: _, ...userlogin } = user
+        console.log('login token: ', token)
 
-        return response.json({
-            user: userlogin,
-            token: token
-        })
+          // Armazenar o token no cookie assinado
+        response.cookie('token', token, { httpOnly: true, signed: true });
+
+        return response.status(200).json({message: "Usuário logado com sucesso"})
+       
     }
 
-
-
-
-
+    public logout = (request: Request, response: Response) => {
+        return response.clearCookie('token')
+        .status(200)
+        .json({ message: "Successfully logged out 😏 🍀" });
+    }
 }
