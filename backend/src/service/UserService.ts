@@ -12,6 +12,10 @@ export class UserService {
         this.userRepository = userRepository
     }
 
+    public getUsers = async (): Promise<User[] | null> => {
+        return await this.userRepository.getUsers()
+    }
+
 
     public getUserByEmail = async (email: string) => {
         return await this.userRepository.getUserByEmail(email)

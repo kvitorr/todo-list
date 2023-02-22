@@ -10,6 +10,10 @@ export class UserRepository {
         this.manager = manager
     }
 
+    public getUsers = async (): Promise<User[] | null> => {
+        return await this.manager.find(User)
+    }
+ 
 
     public getUserByEmail = async (email: string): Promise<User | null> => {
 
