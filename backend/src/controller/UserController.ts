@@ -14,6 +14,15 @@ export class UserController {
         this.userService = userService;
     }
 
+    public getUsers = async (request: Request, response: Response) => {
+
+        console.log('aaaaaaaaa')
+
+        const users: User[] | null = await this.userService.getUsers()
+
+        return response.status(200).json(users)
+    }
+
     public getUserByEmail = async (request: Request, response: Response) => {
         const email: string = request.params.email
 
@@ -34,19 +43,13 @@ export class UserController {
         const { name, email, password } = request.body
         const user: User | null = await this.userService.getUserByEmail(email)
 
-        console.log(request.body)
-
         if(user){
             throw new Error("E-mail já cadastrado.")
         }
 
         const hashPassword: string = await bcrypt.hash(password, 10)
-        const newUser: User = await this.userService.addUser(name, email, hashPassword)
+        const newUser = await this.userService.addUser(name, email, hashPassword)
 
-        return response.status(201).json( { 
-            id_user: newUser.id_user,
-            name: newUser.name,
-            email: newUser.email
-         } )
+        return response.status(200).json({message: "usuário cadastrado"})
     }
 }
