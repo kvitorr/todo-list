@@ -8,8 +8,8 @@ export const routes = Router()
 const userController: UserController = new UserController()
 const loginController: LoginController = new LoginController()
 
-routes.get('/user', userController.getUsers)
+routes.get('/users', userController.getUsers)
 routes.post('/cadastro', userController.addUser)
 routes.post('/login', loginController.login)
 routes.post('/logout', authMiddleware, loginController.logout)
-
+routes.get('/user/:email', userController.getUserByEmail)
