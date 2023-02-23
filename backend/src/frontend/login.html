@@ -21,7 +21,7 @@
             <p>Todo List</p>
         </div>
 
-        <a href="http://localhost:5500/frontend/cadastro.html">
+        <a href="http://127.0.0.1:5500/src/frontend/cadastro.html">
             <button>
                 Criar Conta
             </button>
@@ -35,7 +35,7 @@
                 <h1>Login</h1>
             </div>
 
-            <form action="/pagina-processa-dados-do-form" method="post">
+            <form method="post" id="form">
                 <div class="input-div">
                     <div class="img-div">
                         <img src="./assets/images/user-identity-svgrepo-com.svg" alt="">
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="button-login">
-                    <button type="submit">
+                    <button type="submit" id="buttonLogin">
                         <img src="./assets/images/login-svgrepo-com.svg" alt=""> 
                         <p>login</p>
                     </button>
@@ -64,6 +64,8 @@
     <footer class="footer">
         <p>Desenvolvido por Vitor Araujo</p>
     </footer>
-    
+
+    <script  type="module" src="./assets/javascript/login.js"></script>        
+
 </body>
 </html>
