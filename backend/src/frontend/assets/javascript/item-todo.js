@@ -22,5 +22,16 @@ buttonAddNewTodo.addEventListener('click', () => {
             </div>
         </li>
     `
-
 })
+
+
+const header = document.getElementById('header')
+const nameUser = localStorage.getItem("name");
+
+header.innerHTML += `   <div class="button-logout">
+                            <img src="" alt="usuário">
+                                <p>${nameUser}</p>
+                            <button>
+                                Logout
+                            </button>
+                        </div>`
