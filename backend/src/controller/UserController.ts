@@ -25,6 +25,7 @@ export class UserController {
 
     public getUserByEmail = async (request: Request, response: Response) => {
         const email: string = request.params.email
+        console.log(email)
 
         const user: User | null = await this.userService.getUserByEmail(email)
 
@@ -38,7 +39,6 @@ export class UserController {
             email: user?.email
         })
     }
-
     public addUser = async (request: Request, response: Response) => {
         const { name, email, password } = request.body
         const user: User | null = await this.userService.getUserByEmail(email)
